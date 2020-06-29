@@ -10,13 +10,15 @@ body {
 	align-items: center;
 }
 
+/* solution code has width: 90% here and doesn't have the margin properties, idk why */
 .container{
 	max-width: 1200px;
-	margin: 0 auto;
+	/*margin: 0 auto; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-flow: row wrap;
+	width: 90%;
 }
 
 h1,
@@ -27,26 +29,32 @@ h4 {
 	text-transform: uppercase;
 	font-weight: 700;
 }
-h1 {
-	font-size: 1.875em;
-}
+/* none of these are in the solution code but it was part of the source code download??!! ok.. */
+
 h2 {
     font-size: 1.5rem;
 }
-h3 {
-	font-size: 1.125rem;
+
 }
 h4 {
 	font-size: .75em;
 }
+*/
 
+/* this padding is not in the solution code */
 p {
 	font-size: .875rem;
 	line-height: 1.313rem;
   padding: 0 1.875rem;
 }
 
-/*The widths are in a percentage!*/
+/*the solution code has ul { margin: 0;} yeah idk why
+ul {
+	margin: 0;
+}
+ */
+
+/* solution code has text-align: center, doesn't have the margin property, specfies width at 100% */
 header {
 	border-bottom: .188rem solid #77a466;
 	margin: 0 auto;
@@ -54,36 +62,47 @@ header {
 	justify-content: center;
 	align-items: center;
 	flex-flow: row wrap;
+	text-align: center;
+	width: 100%;
 }
 
+/* source code specifies font-size,border-bottom: 3px solid #77a466 padding is completely different, they have it as 38px 20px 20px 20px and width 100%*/
 header h1 {
+	border-bottom: .188rem solid #77a466;
 	margin: 0;
-	padding: 2.735rem 0;
+	padding: 2.375rem 1.25rem 1.25rem 1.25rem;
+	width: 100%;
+	font-size: 1.875em;
 }
+
 header h1 span {
 	color: #77a466;
 }
 
+/*diff padding in solution code, 20px, and specifies width at 100% */
 header nav {
-	padding: 2.875rem 0;
+	padding: .875rem 0;
+	width: 100%;
 }
+
 header nav ul {
 	margin: 0;
 	padding: 0;
 }
+
 header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: .875rem;
-	padding: 0 .625rem;
-	display: inline;
+	padding: .5rem 0;
+	list-style: none;
 }
 header nav ul li a{
 	text-decoration: none;
 	color:#77a466;
 }
 
-/*The widths are in a percentage!*/
+/*solution code doesnt have margin*/
 .top-section,
 .bottom-section {
 	margin: 0 auto;
@@ -93,53 +112,59 @@ header nav ul li a{
 	flex-flow: row wrap;
 }
 
-.main-image {
-}
 .main-image img {
 	width: 100%;
 	border-bottom: .188rem solid #77a466;
 }
 
-.main-title {
-}
+/*they specified font size here*/
 .main-title h3 {
+	font-size: 1.125rem;
 	text-align: left;
 	padding: .313rem 0;
 	color: #77a466;
 }
+
 .main-title p {
-	padding: 0;
+	padding: 0 0 1rem 0;
 	font-size: 1rem;
 	line-height: 1.563rem;
+	text-align: justify;
 }
 
+/*ok wtf the solution code has width at 100% i dont even know anymore*/
 .section-one,
 .section-two,
 .section-three {
-	width: 33%;
+	width: 100%;
 	border-top: .063rem solid #eee;
 }
 
+/*this is not in the solution code
 .section-one h4 {
 	padding: .625rem 0;
 }
 
+this is not in the solution code
 .section-two {
 	border-left: .063rem solid #eee;
 	border-right: .063rem solid #eee;
 }
 
+
+this is not in the solution code
 .section-two h4,
 .section-three h4 {
 	padding: .625rem 1.875rem;
 }
+*/
 
 .menu {
 	list-style: none;
 	padding: 0;
 }
 .menu li {
-	padding: .625rem 0;
+	padding: .5rem 0;
 	color:#77a466;
 }
 
@@ -154,7 +179,7 @@ header nav ul li a{
 	line-height: 1.5rem;
 }
 
-/*The widths are in a percentage!*/
+/* in solution code, height not specified, width set to 100%, margin not in solution code*/
 footer {
 	height: 3.125rem;
 	border-top: .188rem solid #eee;
@@ -171,4 +196,54 @@ footer span {
 	text-transform: lowercase;
 	color: #77a466;
 	font-size: .875rem;
+}
+
+    /* Tablet */
+@media all and (min-width:768px) {
+	.bottom-section {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		border-top: .063rem solid #eee;
+	}
+
+	.section-one,
+	.section-two,
+	.section-three {
+		flex-basis: 30%;
+		border-top: none;
+	}
+
+	.section-two {
+		border-left: .063rem solid #eee;
+		border-right: .063rem solid #eee;
+		padding: 0 1rem;
+	}
+
+	footer {
+		border-top: .188rem solid #eee;
+		flex-basis: 100%;
+}
+
+    /* Desktop */
+@media all and (min-width:1200px) {
+	header {
+		justify-content: space-between;
+	}
+
+	header h1 {
+		border: none;
+		flex-basis: 30%;
+		text-align: left;
+		padding: 1rem 0;
+	}
+
+	header nav {
+		width: 40%;
+	}
+
+	header nav ul {
+		display: flex;
+		justify-content: space-between;
+	}
 }
